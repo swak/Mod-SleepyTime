@@ -10,6 +10,8 @@
 /mod_SleepyTime/reobf/*
 /mod_SleepyTime/runtime/*
 /mod_SleepyTime/temp/*
+/mod_SleepyTime/CHANGELOG
+/mod_SleepyTime/LICENSE.txt
 
 /mod_SleepyTime/src/minecraft/*
 /mod_SleepyTime/src/minecraft_server/*

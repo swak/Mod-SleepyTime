@@ -1,12 +1,14 @@
 package com.theswak.sleepytime;
 
+import java.util.HashSet;
+
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.src.ICommandManager;
 import net.minecraft.src.ModLoader;
 import net.minecraft.src.ServerCommandManager;
 import net.minecraftforge.common.MinecraftForge;
 
-import com.theswak.sleepytime.commands.CommandBedTime;
+import com.theswak.sleepytime.commands.*;
 import com.theswak.sleepytime.handlers.*;
 
 import cpw.mods.fml.common.Mod;
@@ -30,6 +32,7 @@ import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 
@@ -50,18 +53,21 @@ import cpw.mods.fml.common.registry.TickRegistry;
 public class SleepyTime
 {
 	public static final String ID = "SleepyTime";
-	public static final String MODNAME = "Sleepy Time - the AFK Mod";
+	public static final String MODNAME = "SleepyTime : the AFK Mod";
 	public static final String MCVERSION = "1.4.5";
 	public static final String VERSION = "0.2";
 	public static final boolean DEBUG_MODE = false;
 	
 	@SidedProxy(clientSide="com.theswak.sleepytime.ClientProxy", serverSide="com.theswak.sleepytime.CommonProxy")
 	public static CommonProxy proxy;
-	
 	public static MinecraftServer server;
 	
 	@Instance(ID)
 	public static SleepyTime instance;
+	
+	//
+	public HashSet<Player> onlineplayers;
+	
 	
 	/* IDS for Configuration File */
 //	public static boolean modEnabledFlag;
@@ -119,6 +125,7 @@ public class SleepyTime
 		TickRegistry.registerTickHandler(new ClientTickHandler(), Side.CLIENT);
 		TickRegistry.registerTickHandler(new ServerTickHandler(), Side.SERVER);
 		// registers the client and server tick handlers 
+		
 		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		// registers the class that deals with GUI data
 	}
@@ -127,5 +134,6 @@ public class SleepyTime
 	private void addCommands(ServerCommandManager manager)
 	{
 		manager.registerCommand(new CommandBedTime());
+		manager.registerCommand(new CommandAfk());
 	}
 }

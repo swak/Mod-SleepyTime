@@ -28,23 +28,37 @@ public class ClientPacketHandler implements IPacketHandler
 	@Override
 	public void onPacketData(INetworkManager manager, Packet250CustomPayload packet, Player player)
 	{
-		if(packet.channel.equals(SleepyTime.ID)) {
-			handleServerPacket(packet);
-		}
-	}
-		
-	private void handleServerPacket(Packet250CustomPayload packet)
-	{
-		DataInputStream data = new DataInputStream(new ByteArrayInputStream(packet.data));
-		
-		try {
-			int color = data.readInt();
-			String message = data.readUTF();
+		// if packet channel is mod packet
+		if(packet.channel.equals(SleepyTime.ID)) { 
+			DataInputStream data = new DataInputStream(new ByteArrayInputStream(packet.data));
 			
-			LogHandler.log(Level.INFO, message);
-			LogHandler.log(Level.INFO, "CLIENTPACKET RECEIVED");
-		} catch (IOException ex) {
-			ex.printStackTrace();
+			try {
+				String msg = data.readUTF();
+				int type = data.readInt();
+				
+				LogHandler.log(Level.INFO, msg + " :: TYPE-" + type);
+				
+
+				switch(type)
+				{
+				case 0: // PACKET FROM SERVER TO ALL PLAYERS
+					
+					return;
+				case 1:
+					return;
+				case 2:
+					return;
+				default:
+					LogHandler.log(Level.WARNING, "CLIENTPACKET RECEIVED WITH NO TYPE");
+				}
+			} catch (IOException ex) {
+				ex.printStackTrace();
+				LogHandler.log(Level.SEVERE, "handleServerPacket has had an issue!");
+			}
 		}
 	}
+		
+	
+	// CLIENT PACKET METHODS
+//	private void handleServerPacket(Packet250CustomPayload packet) {}
 }

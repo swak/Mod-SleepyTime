@@ -24,12 +24,35 @@ public class ServerPacketHandler implements IPacketHandler
 			try {
 				DataInputStream data = new DataInputStream(new ByteArrayInputStream(packet.data)); // handles incoming data
 				EntityPlayer sender = (EntityPlayer) player;
+//				Long time = data.readLong();
+				String msg = data.readUTF();
+				int type = data.readInt();
+				
+				switch(type)
+				{
+				case 0:
+					LogHandler.log(Level.INFO, "Server received Message Type 0");
+					PacketDispatcher.sendPacketToAllInDimension(packet, sender.dimension);
+					LogHandler.log(Level.INFO, "SERVERPACKET SENT TO ALL PLAYERS");
+					return;
+				case 1:
+					manager.addToSendQueue(packet);
+					LogHandler.log(Level.INFO, "Server received Message Type 1");
+					return;
+				default:
+					LogHandler.log(Level.INFO, "Server received Message Default Catcher");
+				}
 
-				PacketDispatcher.sendPacketToAllPlayers(packet);
-				LogHandler.log(Level.INFO, "serverPacketHandler sent");
 			} catch(Exception ex) {
 				ex.printStackTrace();
+				LogHandler.log(Level.SEVERE, "onPacketData on Server has failed!");
 			}
 		}
+	}
+	
+	// SERVER PACKET METHODS
+	private void updatePlayersAwayStatus()
+	{
+		
 	}
 }
