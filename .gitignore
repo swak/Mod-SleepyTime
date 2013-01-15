@@ -18,6 +18,15 @@
 /mod_SleepyTime/src/common/*
 !/mod_SleepyTime/src/common/com/theswak/*
 
+# Java Class Files #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# MCP and other Misc Files #
 *.bat
 *.sh
 *.DS_Store
