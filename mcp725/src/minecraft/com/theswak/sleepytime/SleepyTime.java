@@ -51,9 +51,9 @@ public class SleepyTime
 	public static final String MODNAME = "SleepyTime : the AFK Mod";
 	public static final String CHANNEL = "SleepyTimeChan";
 	public static final String MCVERSION = "1.4.6";
-	public static final String VERSION = "0.5.1";
+	public static final String VERSION = "0.5.2";
 	
-	public static final boolean DEBUG_MODE = true;
+	public static final boolean DEBUG_MODE = false;
 	
 	@SidedProxy(clientSide="com.theswak.sleepytime.common.ClientProxy", serverSide="com.theswak.sleepytime.common.CommonProxy")
 	public static CommonProxy proxy;

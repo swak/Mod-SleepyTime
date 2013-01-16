@@ -37,7 +37,8 @@ public class EventHooksHandler
 			EntityPlayerMP playerMP = (EntityPlayerMP)event.entityPlayer;
 			World world = playerMP.worldObj;
 			try {
-				if(event.getResult() == Result.DEFAULT && !world.isDaytime())  {
+				if((event.getResult() == Result.DEFAULT) && 
+						(!world.isDaytime() && playerMP.getDistanceSq(event.x, event.y, event.z) < 10))  {
 					sendSleepingStatus(playerMP, true);
 					/* DEBUG */
 					if(SleepyTime.DEBUG_MODE) { debugPlayerInfo(playerMP); }

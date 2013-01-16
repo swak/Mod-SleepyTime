@@ -113,7 +113,7 @@ public class PacketHandler implements IPacketHandler, IConnectionHandler
 				}
 				
 				if(statusType == STATUS_AWAYFROMKEYBOARD) {
-					p.addChatMessage(p.username + ": SETTING IDLE STATUS");
+					p.addChatMessage("\u00a7C" + p.username + ": SETTING IDLE STATUS");
 					pi.isAwayFromKeyboard(true);
 				}
 				
