@@ -12,8 +12,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.EnumStatus;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.world.World;
+import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
@@ -35,16 +37,12 @@ public class EventHooksHandler
 			EntityPlayerMP playerMP = (EntityPlayerMP)event.entityPlayer;
 			World world = playerMP.worldObj;
 			try {
-				if(event.result.OK != null)  { // if event result is ok
+				if(event.getResult() == Result.DEFAULT && !world.isDaytime())  {
 					sendSleepingStatus(playerMP, true);
 					/* DEBUG */
 					if(SleepyTime.DEBUG_MODE) { debugPlayerInfo(playerMP); }
-				} else {
-					LogHandler.log(Level.INFO, "EVENT.RESULT.OK is null!");
 				}
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
 		}
@@ -55,7 +53,6 @@ public class EventHooksHandler
 		Byte PlayerStatus = 0;
 		World world = player.worldObj;
 		String playerName = player.username;
-		
 		if(world == null || !world.isRemote) {
 			try {
 				ByteArrayOutputStream bos = new ByteArrayOutputStream();

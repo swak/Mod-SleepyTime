@@ -108,7 +108,7 @@ public class PacketHandler implements IPacketHandler, IConnectionHandler
 				
 				if(statusType == STATUS_SLEEPING) {
 					sender = datastream.readUTF();
-					p.addChatMessage(sender + " is sleeping.");
+					p.addChatMessage("\u00a7C" + sender + " is sleeping.");
 					pi.isSleeping(true);
 				}
 				
