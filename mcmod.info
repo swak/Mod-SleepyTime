@@ -3,14 +3,14 @@
   "modid": "SleepyTimeMod",
   "name": "SleepyTime Mod",
   "description": "the AFK/Idle and Sleeping Status Mod",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "mcversion": "1.4.6",
-  "url": "http://youtube.com/theSwak",
+  "url": "http://dev.gameroast.com/",
   "updateUrl": "",
   "authors": [
     "theSwak"
   ],
-  "credits": "theSwak",
+  "credits": "swak @ gameroast",
   "logoFile": "",
   "screenshots": [
   ],
