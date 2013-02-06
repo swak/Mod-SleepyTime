@@ -1,10 +1,10 @@
 [
 {
   "modid": "SleepyTimeMod",
-  "name": "SleepyTime Mod",
-  "description": "the AFK/Idle and Sleeping Status Mod",
-  "version": "0.5.3",
-  "mcversion": "1.4.6",
+  "name": "SleepyTime",
+  "description": "the AFK&BED Status Mod",
+  "version": "0.7.0",
+  "mcversion": "1.4.7",
   "url": "http://dev.gameroast.com/",
   "updateUrl": "",
   "authors": [

@@ -37,12 +37,8 @@ public class EventHooksHandler
 			EntityPlayerMP playerMP = (EntityPlayerMP)event.entityPlayer;
 			World world = playerMP.worldObj;
 			try {
-//				LogHandler.log(Level.INFO, "EVENT: " + event.toString());
-				LogHandler.log(Level.INFO, "EVENT: " + event.getResult().toString());
-				LogHandler.log(Level.INFO, "SLEEPTIMER: " + event.entityPlayer.getSleepTimer());
-
 				if((event.getResult() == Result.DEFAULT) && 
-						(!world.isDaytime() && playerMP.getDistance(event.x, event.y, event.z) < (double)10))  {
+						(!world.isDaytime() && playerMP.getDistanceSq(event.x, event.y, event.z) < (double)10))  {
 					sendSleepingStatus(playerMP, true);
 					/* DEBUG */
 					if(SleepyTime.DEBUG_MODE) { debugPlayerInfo(playerMP); }
@@ -92,7 +88,7 @@ public class EventHooksHandler
 		if(!player.equals(null)) {
 			String sender = player.getEntityName();
 			LogHandler.log(Level.INFO, "DEBUG SENDER :: " + sender); // sender player
-			LogHandler.log(Level.INFO, "DEBUG PLAYERENTITY :: " + player.worldObj.playerEntities.get(0).toString());
+//			LogHandler.log(Level.INFO, "DEBUG PLAYERENTITY :: " + player.worldObj.playerEntities.get(0).toString());
 		} else {
 			LogHandler.log(Level.WARNING, "EntityPlayer not found!");
 		}
