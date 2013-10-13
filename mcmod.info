@@ -3,7 +3,7 @@
   "modid": "SleepyTimeMod",
   "name": "SleepyTime",
   "description": "the AFK&BED Status Mod",
-  "version": "0.7.0",
+  "version": "0.5.4",
   "mcversion": "1.4.7",
   "url": "http://dev.gameroast.com/",
   "updateUrl": "",
@@ -11,11 +11,12 @@
     "theSwak"
   ],
   "credits": "swak @ gameroast",
-  "logoFile": "",
+  "logoFile": "/textures/sleepytime-modlogo.png",
   "screenshots": [
   ],
   "parent":"",
   "dependencies": [
+  "mod_MinecraftForge
   ]
 }
 ]

@@ -11,6 +11,7 @@ import net.minecraftforge.common.Configuration;
 
 import com.theswak.sleepytime.commands.*;
 import com.theswak.sleepytime.common.*;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -34,7 +35,7 @@ import cpw.mods.fml.relauncher.Side;
 
 /**
  * 
- * @author theSwak.com : Shaun Wakashige
+ * @author theSwak @ dev.gameroast.com : Shaun Wakashige
  * a forge mod for minecraft that delivers the clients sleeping and away from keyboard status
  */
 @Mod( modid = SleepyTime.ID, name = SleepyTime.MODNAME, version= SleepyTime.VERSION )
@@ -52,7 +53,7 @@ public class SleepyTime
 	public static final String MODNAME = "SleepyTime : the AFK Mod";
 	public static final String CHANNEL = "SleepyTimeChan";
 	public static final String MCVERSION = "1.4.7";
-	public static final String VERSION = "0.7.0";
+	public static final String VERSION = "0.5.4";
 	
 	public static final boolean DEBUG_MODE = false;
 	

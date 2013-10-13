@@ -86,9 +86,8 @@ public class EventHooksHandler
 	private void debugPlayerInfo(EntityPlayer player)
 	{
 		if(!player.equals(null)) {
-			String sender = player.getEntityName();
-			LogHandler.log(Level.INFO, "DEBUG SENDER :: " + sender); // sender player
-//			LogHandler.log(Level.INFO, "DEBUG PLAYERENTITY :: " + player.worldObj.playerEntities.get(0).toString());
+			String sender = player.getEntityName(); // player's name
+			LogHandler.log(Level.INFO, "DEBUG SENDER :: " + sender);
 		} else {
 			LogHandler.log(Level.WARNING, "EntityPlayer not found!");
 		}
