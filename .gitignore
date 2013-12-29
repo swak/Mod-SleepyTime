@@ -50,3 +50,28 @@ forge/patches/minecraft/net/minecraft/block/
 forge/patches/minecraft/net/minecraft/client/
 forge/patches/
 forge/mcp/src/minecraft/assets/
+forge/MinecraftForge-Changelog.txt
+forge/MinecraftForge-Credits.txt
+forge/MinecraftForge-Credits.txt~
+forge/MinecraftForge-License.txt
+forge/MinecraftForge-License.txt~
+forge/Paulscode IBXM Library License.txt
+forge/Paulscode SoundSystem CodecIBXM License.txt
+forge/README-MinecraftForge.txt
+forge/forge.py
+forge/forge.pyc
+forge/forgeversion.properties
+forge/install.cmd
+forge/install.py
+forge/mcp/CHANGELOG
+forge/mcp/LICENSE.txt
+forge/mcp/src/minecraft/Start.java
+forge/mcp/src/minecraft/deobfuscation_data-1.6.4.lzma
+forge/mcp/src/minecraft/fml_at.cfg
+forge/mcp/src/minecraft/fml_marker.cfg
+forge/mcp/src/minecraft/fmlversion.properties
+forge/mcp/src/minecraft/forge_at.cfg
+forge/mcp/src/minecraft/forge_at.cfg~
+forge/mcp/src/minecraft/forge_logo.png
+forge/mcp/src/minecraft/mcpmod.info
+forge/mcp/src/minecraft/paulscode/sound/codecs/CodecIBXM.java
